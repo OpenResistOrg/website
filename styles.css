@@ -12,7 +12,7 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #1e2935; /* Elevated body text color for better contrast vs headings */
     background-color: #EBEBEB;
 }
 
@@ -62,29 +62,35 @@ p {
 }
 
 .btn-primary {
-    background-color: #2563eb;
-    color: white;
-    border-color: #2563eb;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb 55%, #1e40af);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 1.9rem;
+    border-radius: 48px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 16px -2px rgba(29,78,216,0.45), 0 2px 4px rgba(0,0,0,0.08);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, filter .28s ease;
 }
-
-.btn-primary:hover {
-    background-color: #1d4ed8;
-    border-color: #1d4ed8;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
-}
-
 .btn-secondary {
-    background-color: transparent;
-    color: #2563eb;
-    border-color: #2563eb;
+    background: #ffffff;
+    color: #1d4ed8;
+    border: 2px solid rgba(29,78,216,0.25);
+    padding: 0.85rem 1.55rem;
+    font-weight: 600;
+    border-radius: 48px;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background .28s ease, color .28s ease;
 }
-
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px -8px rgba(29,78,216,0.45), 0 8px 14px -6px rgba(29,78,216,0.35);
+}
 .btn-secondary:hover {
-    background-color: #2563eb;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+    background: #1d4ed8;
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px -6px rgba(29,78,216,0.35);
 }
 
 /* Navigation */
@@ -93,6 +99,7 @@ p {
     top: 0;
     width: 100%;
     background-color: rgba(235, 235, 235, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -169,19 +176,17 @@ p {
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #EBEBEB, #e0e7ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.5px;
+    color: #0f1724;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.12);
     line-height: 1.7;
 }
 
@@ -200,18 +205,20 @@ p {
 .hero-graphic {
     width: 300px;
     height: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.06);
 }
 
 .hero-graphic i {
     font-size: 6rem;
-    color: rgba(255, 255, 255, 0.8);
+    /* darker icon color to increase contrast when hero sits on off-white layers */
+    color: rgba(15, 23, 42, 0.9);
 }
 
 /* Section Headers */
@@ -245,7 +252,7 @@ p {
 }
 
 .mission-card {
-    background: #EBEBEB;
+    background: #ffffff;
     padding: 2.5rem;
     border-radius: 16px;
     text-align: center;
@@ -271,11 +278,12 @@ p {
 
 .mission-icon i {
     font-size: 2rem;
+    /* icons sit on a dark gradient circle - keep white for contrast */
     color: white;
 }
 
 .mission-card h3 {
-    color: #1f2937;
+    color: #0f1724; /* darker heading for improved contrast */
     margin-bottom: 1rem;
 }
 
@@ -299,7 +307,7 @@ p {
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
+        background: #ffffff;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -307,21 +315,22 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+        background: #ffffff;
 }
 
 .project-header h3 {
-    color: #1f2937;
+    color: #0f1724;
     margin: 0;
 }
 
 .project-status {
-    background-color: #10b981;
-    color: white;
+    background-color: #047857; /* Deeper green for stronger contrast */
+    color: #ffffff;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: .25px;
 }
 
 .project-tags {
@@ -332,12 +341,15 @@ p {
 }
 
 .tag {
-    background-color: #e0e7ff;
-    color: #3730a3;
+    background: #ffffff;
+    color: #1e3a8a;
     padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    border: 1px solid rgba(30,58,138,0.18);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: .3px;
+    text-transform: uppercase;
 }
 
 /* Team Section */
@@ -422,6 +434,18 @@ p {
     border-radius: 16px;
 }
 
+.mission-card p,
+.project-card p,
+.team-card p,
+.contact-form p,
+.contact-item p {
+    color: #0f1724;
+}
+
+.nav-menu a {
+    color: #0f1724;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -447,8 +471,7 @@ p {
 
 /* Footer */
 .footer {
-    background-color: #1f2937;
-    color: white;
+    background-color: #0f1724; /* keep footer dark for contrast */
     padding: 60px 0 20px;
 }
 
@@ -460,13 +483,11 @@ p {
 }
 
 .footer-section h3,
+.footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: white;
 }
-
 .footer-section p {
-    color: #d1d5db;
     line-height: 1.7;
 }
 
@@ -479,7 +500,6 @@ p {
 }
 
 .footer-section ul li a {
-    color: #d1d5db;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -631,4 +651,130 @@ p {
 /* Smooth scrolling offset for fixed nav */
 section {
     scroll-margin-top: 70px;
+}
+
+/* ------------------
+   Modern Theme Overrides
+   - Uses subtle gradients, refined spacing, stronger accent colors
+   - Improves button styles, card elevation, hero visual, and footer
+   ------------------ */
+
+:root {
+    --accent: #2563eb; /* primary brand blue */
+    --accent-700: #1d4ed8;
+    --muted: #6b7280;
+    --bg-offwhite: #EBEBEB;
+    --card-bg: #ffffff00; /* transparent base so cards pick up subtle backdrop */
+    --glass: rgba(255,255,255,0.6);
+    --radius: 14px;
+}
+
+/* Hero */
+.hero {
+    padding: 120px 0 80px; /* give the hero more presence */
+    background: linear-gradient(180deg, rgba(37,99,235,0.06), transparent 60%);
+}
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Accessibility: Skip Link & Focus Styles */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1d4ed8;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 0 0 6px 0;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-decoration: none;
+    z-index: 2000;
+    transition: top .25s ease;
+}
+.skip-link:focus {
+    top: 0;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(29,78,216,0.45);
+}
+
+:focus-visible {
+    outline: 2px solid #1d4ed8;
+    outline-offset: 3px;
+}
+.hero-graphic {
+    width: 420px;
+    height: 260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(37,99,235,0.02));
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(37,99,235,0.06);
+    font-size: 64px;
+    color: var(--accent);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 12px;
+    padding: 12px 20px;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+}
+.btn-primary {
+    background: linear-gradient(90deg,var(--accent),var(--accent-700));
+    color: #fff;
+    border: none;
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid rgba(37,99,235,0.12);
+}
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+}
+
+/* Cards */
+.mission-card, .project-card, .team-card {
+    border-radius: var(--radius);
+    transition: transform 0.28s cubic-bezier(.2,.9,.3,1), box-shadow 0.28s ease;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+}
+.mission-card:hover, .project-card:hover, .team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(15,23,42,0.09);
+}
+
+/* Projects tag */
+.tag {
+    background: rgba(37,99,235,0.08);
+    color: var(--accent-700);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+.footer {
+    margin-top: 60px;
+    background: linear-gradient(180deg, rgba(16,24,40,0.02), transparent);
+    padding: 48px 0 32px;
+}
+.footer .footer-bottom p {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Utilities */
+.container.padding-large { padding-top: 60px; padding-bottom: 60px }
+
+/* Make sure mobile hero adapts when columns collapse */
+@media (max-width: 920px){
+    .hero-container{ grid-template-columns: 1fr; }
+    .hero-graphic{ width:100%; height:200px }
 }
