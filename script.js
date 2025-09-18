@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navbar background on scroll
     const navbar = document.querySelector('.navbar');
-    let lastScrollTop = 0;
+    let lastScrollTop = 0; // retained if future logic needed, but no longer used for hide/show
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -103,16 +103,9 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.boxShadow = 'none';
         }
         
-        // Hide/show navbar on scroll (optional)
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop;
+        // Always visible navbar; remove transform-based hiding
+        navbar.style.transform = 'translateY(0)';
+        lastScrollTop = scrollTop; // kept for potential future use
     });
 
     // Intersection Observer for fade-in animations
